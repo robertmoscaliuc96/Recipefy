@@ -5,6 +5,9 @@ const path = require('path');
 
 const app = express();
 
+//Connect DB
+connectDB();
+
 app.use(express.json());
 
 // Define Routes

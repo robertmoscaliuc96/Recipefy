@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://robert321:robert321@fqacluster.alacq.mongodb.net/FQA?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://robert123:robert123@cluster0.13d3m.mongodb.net/FQA?retryWrites=true&w=majority",
     "jwtToken": "secrettoken"
 }
