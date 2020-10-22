@@ -8,8 +8,8 @@ const app = express();
 //Connect DB
 connectDB();
 
-/* app.use(express.json());
- */
+// Init Middleware
+app.use(express.json({extended: false}));
 
  // Define Routes
 
