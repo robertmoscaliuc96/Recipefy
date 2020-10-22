@@ -68,8 +68,6 @@ router.post('/',[
         res.status(500).sent("Server error");
     }
 
-    res.send("Users Route");
-
 });
 
 module.exports = router;
