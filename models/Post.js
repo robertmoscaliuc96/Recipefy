@@ -18,10 +18,23 @@ const RecipeSchema = new Schema({
         type: String,
         required: true,
     },
-    text:{
+    description:{
         type: String,
         required: true,
     },
+    type:{
+        type: String,
+        required: true,
+    },
+    ingredients:{
+        type: String,
+        required: true,
+    },
+    description:{
+        type: String,
+        
+    },
+    
     name : {
         type: String,    
     },
@@ -32,7 +45,7 @@ const RecipeSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    likes:[
+    stars:[
         {
             user:{
                 type: Schema.Types.ObjectId,
@@ -40,7 +53,7 @@ const RecipeSchema = new Schema({
             }
         }
     ],
-    comments:[
+    review:[
         {
             user:{
                 type: Schema.Types.ObjectId,
