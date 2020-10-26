@@ -6,14 +6,6 @@ const auth = require("../../middleware/auth");
 const Post = require('../../models/Post');
 const User = require('../../models/User');
 
-const nodemailer = require("nodemailer");
-
-
-// @route  GET api/posts
-// @desc   Test route 
-// @access Public
-router.get('/', (req,res) => res.send("Posts Route"));
-
 
 
 // @route   POST api/posts
@@ -23,6 +15,8 @@ router.post("/", [auth, [
     check("title", "Title is required").not().isEmpty(),
     check("ingredients", "Ingredients is required").not().isEmpty(),
     check("type", "Type is required").not().isEmpty(),
+    check("time", "Time is required").not().isEmpty(),
+    check("description", "Description is required").not().isEmpty(),
 
     ]
 ],
@@ -37,7 +31,10 @@ async (req, res) => {
       
       const newPost = new Post({
         title: req.body.title,
-        text: req.body.text,
+        type: req.body.type,
+        ingredients: req.body.ingredients,
+        description: req.body.description,
+        time: req.body.time,
         name: user.name,
         avatar: user.avatar,
         user: req.user.id,
@@ -73,9 +70,10 @@ router.get('/', auth, async(req,res) =>{
     }
   });
 
-  // @route   DELETE api/posts/:id
-// @desc    Delete post by ID
-// @access  Private 
+
+    // @route   DELETE api/posts/:id
+    // @desc    Delete post by ID
+    // @access  Private 
 
 router.delete('/:id', auth, async(req,res) =>{
 
