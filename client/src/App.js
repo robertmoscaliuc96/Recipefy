@@ -1,15 +1,29 @@
 import React, {Fragment} from 'react'
-import Navbar from '../components/layout/Navbar';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Navbar from './components/layout/Navbar';
+import Landing from './components/pages/Landing';
+import Login from './auth/Login';
+import Register from './auth/Register';
 import './App.css';
 
-function App() {
+const App= () => {
   return (
-    <Fragment>
-      <Navbar/>
+    <Router>
+      <Fragment>
 
-      <h1>APP WELCOME</h1>
-      
-    </Fragment>
+        <Navbar/>
+        <Route exact path="/" component={Landing}/>
+
+        <section className="container">
+          <Switch>
+          <Route exact path="/register" component={Register}/>
+          <Route exact path="/login" component={Login}/>
+          </Switch>
+        </section>
+
+      </Fragment>
+
+    </Router>
 
   );
 }
