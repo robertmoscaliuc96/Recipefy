@@ -1,14 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import icon from '../../assets/RLogoMintBlue.svg'
 
 
 
 const Navbar=() =>{
     return (
         <nav className="navbar bg-dark">
-        <h1>
-          <img src={icon} alt="Robert" className="icon"></img>
+        <h1> Recipe
         </h1>
         <ul>
       <li>
