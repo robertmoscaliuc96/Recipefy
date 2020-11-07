@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import icon from '../../assets/RLogoMintBlue.svg'
 
 
 
@@ -7,9 +8,7 @@ const Navbar=() =>{
     return (
         <nav className="navbar bg-dark">
         <h1>
-          <Link to="/">
-          <i className="fas fa-code"></i> FAQ
-          </Link>
+          <img src={icon} alt="Robert" className="icon"></img>
         </h1>
         <ul>
       <li>

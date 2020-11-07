@@ -12,7 +12,9 @@
   margin: 0;
   padding: 0;
 }
-
+.icon {
+  width: 4rem;
+}
 body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
@@ -293,7 +295,7 @@ button {
   width: 100%;
   top: 0;
   border-bottom: solid 2px var(--primary-color);
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .navbar ul {
