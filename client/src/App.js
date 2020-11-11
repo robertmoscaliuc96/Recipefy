@@ -5,6 +5,7 @@ import Landing from './components/pages/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Alert from './components/layout/Alert';
+import Posts from './components/posts/Posts'
 import './App.css';
 
 //Redux
@@ -38,6 +39,7 @@ const App= () => {
             <Switch>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
+            <Route exact path="/posts" component={Posts}/>
             </Switch>
           </section>
 
