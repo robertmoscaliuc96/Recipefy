@@ -15,8 +15,7 @@ router.post("/", [auth, [
     check("title", "Title is required").not().isEmpty(),
     check("ingredients", "Ingredients is required").not().isEmpty(),
     check("type", "Type is required").not().isEmpty(),
-    check("time", "Time is required").not().isEmpty(),
-    check("description", "Description is required").not().isEmpty(),
+
 
     ]
 ],
@@ -149,10 +148,10 @@ router.put('/like/:id', auth, async(req,res)=>{
     }
   });
 
-  // @route   POST api/posts/comment/:id
-// @desc    Comment on a post
+  // @route   POST api/posts/review/:id
+// @desc    review on a post
 // @access  Private 
-router.post("/comment/:id", [auth, [
+router.post("/review/:id", [auth, [
     check("text", "Text is required").not().isEmpty()
     ]
   ],
@@ -175,7 +174,7 @@ router.post("/comment/:id", [auth, [
       };
 
       // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-      post.comments.unshift(newComment)
+      post.reviews.unshift(newComment)
       await post.save();
   
       res.json(post.comments);
@@ -187,32 +186,32 @@ router.post("/comment/:id", [auth, [
   );
   
   
-  // @route   DELETE api/posts/comment/:id/:comment_id
-  // @desc    Delete comment
+  // @route   DELETE api/posts/review/:id/:review_id
+  // @desc    Delete review
   // @access  Private 
-  router.delete('/comment/:id/:comment_id', auth, async(req,res) =>{
+  router.delete('/review/:id/:review_id', auth, async(req,res) =>{
   
   try {
     const post = await Post.findById(req.params.id);
   
     //Pull out comment
-    const comment= post.comments.find(comment => comment.id === req.params.comment_id)
+    const review= post.reviews.find(review => review.id === req.params.review_id)
     // check if comment exist
-    if(!comment){
-      return res.status(404).json({msg: "comment doesn't exist"});
+    if(!review){
+      return res.status(404).json({msg: "review doesn't exist"});
     }
     // Check user 
-    if(comment.user.toString()!== req.user.id){
+    if(review.user.toString()!== req.user.id){
       return res.status(401).json({msg: "User not authorized"});
     }
   
   // Get remove index
-  const removeIndex = post.comments.map(comment => comment.user.toString()).indexOf(req.user.id);
-  post.comments.splice(removeIndex, 1);
+  const removeIndex = post.reviews.map(review => review.user.toString()).indexOf(req.user.id);
+  post.reviews.splice(removeIndex, 1);
   
   await post.save();
   
-  res.json(post.comments);
+  res.json(post.reviews);
   
   
   } catch (err) {

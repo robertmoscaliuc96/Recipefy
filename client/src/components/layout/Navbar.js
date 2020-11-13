@@ -10,7 +10,11 @@ const Navbar=({auth: {isAuthenticated, loading}, logout}) =>{
     <ul>
       <li>
         <i className="fab fa-discourse"></i>
-        <Link to='/posts'>Posts</Link>
+        <Link to='/posts'>Community</Link>
+      </li>
+      <li>
+        <i className="fab fa-discourse"></i>
+        <Link to='/ideas'>Ideas</Link>
       </li>
       <li>
       <a onClick={logout} href='#!'>

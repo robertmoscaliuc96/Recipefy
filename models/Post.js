@@ -53,6 +53,14 @@ const RecipeSchema = new Schema({
             }
         }
     ],
+    likes:[
+        {
+            user:{
+                type: Schema.Types.ObjectId,
+                ref: "users"
+            }
+        }
+    ],
     review:[
         {
             user:{

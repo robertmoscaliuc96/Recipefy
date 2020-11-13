@@ -8,7 +8,7 @@ import {
     LOGOUT
 } from '../actions/type'
 
-const initailState = { 
+const initialState = { 
      token: localStorage.getItem('token'),
       // When make a successful request to register or log in it will be set true
       isAuthenticated: null,
@@ -18,7 +18,9 @@ const initailState = {
 
 }
 
-export default function(state = initailState, action) {
+
+export default function(state = initialState, action) {
+    
     const {type, payload} = action;
 
     switch(type){

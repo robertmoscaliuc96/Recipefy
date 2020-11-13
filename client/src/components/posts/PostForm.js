@@ -8,11 +8,14 @@ const PostForm = ({addPost}) => {
 
     const[formData, setFormData] = useState({
       title: "",
-      text: "",
+      type: "",
+      description:"",
+      ingredients:"",
+      time:"",
       keyword: "",
     });
 
-    const {title,text,keyword} = formData;
+    const {title,description,type,ingredients,time,keyword} = formData;
     //const [title,text,setText] = useState('')
     const onChange= e => setFormData({...formData, [e.target.name]:e.target.value}); 
 
@@ -26,23 +29,30 @@ const PostForm = ({addPost}) => {
           className='form my-1'
           onSubmit={e => {
             e.preventDefault();
-            addPost({ title, text,keyword });
-            
+            addPost({ title,description,type,ingredients,time,keyword });       
           }}
         >
 
         <div className="form-group">
           <input type='text' placeholder='Title' onChange={e =>onChange(e)} value={title} name= "title" />
         </div>
+        <div className="form-group">
+          <input type='text' placeholder='Ingredients' onChange={e =>onChange(e)} value={ingredients} name= "ingredients" />
+        </div>
+        <div className="form-group">
+          <input type='text' placeholder='Type' onChange={e =>onChange(e)} value={type} name= "type" />
+        </div>
+        <div className="form-group">
+          <input type='text' placeholder='Time' onChange={e =>onChange(e)} value={time} name= "time" />
+        </div>
 
           <textarea
-            name='text'
+            name='description'
             cols='30'
             rows='5'
-            placeholder='Create a summary'
-            value={text}
+            placeholder='Create a description'
+            value={description}
             onChange={e =>onChange(e)}
-            required
           />
           <input type='submit' className='btn btn-dark my-1' value='Submit' />
         </form>
@@ -54,3 +64,5 @@ PostForm.propTypes = {
 }
 
 export default connect(null,{addPost})(PostForm)
+
+
