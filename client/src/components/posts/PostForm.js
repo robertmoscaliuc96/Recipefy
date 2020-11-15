@@ -29,7 +29,8 @@ const PostForm = ({addPost}) => {
           className='form my-1'
           onSubmit={e => {
             e.preventDefault();
-            addPost({ title,description,type,ingredients,time,keyword });       
+            addPost({ title,description,type,ingredients,time,keyword });    
+            setFormData("")   
           }}
         >
 

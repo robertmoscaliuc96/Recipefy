@@ -9,17 +9,21 @@ const Navbar=({auth: {isAuthenticated, loading}, logout}) =>{
   const authLinks = (
     <ul>
       <li>
-        <i className="fab fa-discourse"></i>
-        <Link to='/posts'>Community</Link>
+      <i className="fas fa-cookie-bite"></i>        
+      <Link to='/posts'>Community</Link>
       </li>
       <li>
-        <i className="fab fa-discourse"></i>
-        <Link to='/ideas'>Ideas</Link>
+      <i className="far fa-lightbulb"></i>
+      <Link to='/ideas'>Ideas</Link>
+      </li>
+      <li>
+      <i className="fas fa-calculator"></i>
+      <Link to='/calculator'>Calculator</Link>
       </li>
       <li>
       <a onClick={logout} href='#!'>
       <i className="fas fa-sign-out-alt"></i>{' '}
-      <span className="hide-sm">Logout</span></a> 
+      <span className="hide-sm"></span></a> 
       </li>
   </ul>
   );
