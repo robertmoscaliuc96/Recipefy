@@ -1,7 +1,7 @@
 
 import React, {useState }from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+/* import PropTypes from 'prop-types';
+import { connect } from 'react-redux'; */
 //import {searchRecipe} from '../../actions/recipe';
 
 
@@ -20,6 +20,9 @@ const IdeasSearch=() =>{
             <form className='form my-1'>
                 <div className="form-group">
                 <input type='text' placeholder='Search' onChange={e =>onChange(e)} value={search} name= "search" />
+                <button className="search-button" type="submit">
+                    Search
+                </button>
             </div>
             </form>
 

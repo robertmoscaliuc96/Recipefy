@@ -1,12 +1,14 @@
 import {
     GET_RECIPES,
     ERROR,
-    MAKE_REQUEST
+    MAKE_REQUEST,
+    SET_LOADING
 } from '../actions/type'
 
 const initialState = {
     recipe: [],
-    loading: false
+    loading: true,
+    error: {}
     
 }
 export default function(state = initialState, action) {
@@ -26,6 +28,11 @@ export default function(state = initialState, action) {
                 ...state,
                 loading: false,
                 recipes: payload
+            }
+        case SET_LOADING:
+            return {
+                ...state,
+                loading: true
             }
         
         case ERROR:

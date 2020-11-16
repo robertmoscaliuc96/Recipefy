@@ -24,4 +24,5 @@ export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const MAKE_REQUEST = "MAKE_REQUEST";
 export const GET_RECIPES = "GET_RECIPES";
 export const ERROR = "ERROR";
+export const SET_LOADING ="SET_LOADING"
 
