@@ -4,7 +4,6 @@ import Register from '../auth/Register';
 import Login from '../auth/Login';
 import Alert from '../layout/Alert';
 import Posts from '../posts/Posts';
-import Post from '../post/Post';
 import Calculator from '../calculator/Calculator'
 import Ideas from '../Ideas/Ideas'
 //import PrivateRoute from '../routing/PrivateRoute';
@@ -19,7 +18,6 @@ const Routes = () => {
                 <Route exact path='/register' component={Register}/>
                 <Route exact path='/login' component={Login}/>
                 <Route exact path='/posts' component={Posts}/>        
-                <Route exact path='/posts/:id' component={Post} />
                 <Route exact path='/ideas' component={Ideas} />
                 <Route exact path='/calculator' component={Calculator} />
                 <Route component={NotFound} />
@@ -29,3 +27,6 @@ const Routes = () => {
 
 };
 export default Routes;
+
+
+//     <Route exact path='/posts/:id' component={Post} />
