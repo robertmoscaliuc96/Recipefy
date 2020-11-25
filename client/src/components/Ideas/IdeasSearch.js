@@ -1,27 +1,40 @@
 
 import React, {useState }from 'react';
-/* import PropTypes from 'prop-types';
-import { connect } from 'react-redux'; */
-//import {searchRecipe} from '../../actions/recipe';
+import { getRecipes } from '../../actions/recipe';
+import { connect } from 'react-redux';
+import {setAlert} from '../../actions/alert'
+import PropTypes from 'prop-types';
 
 
-const IdeasSearch=() =>{
+const IdeasSearch=({getRecipes}) =>{
 
-    const [searchData, setSearchData] = useState({
-        search:""
-    })
-    const {search} = searchData;
+    const [queryData, setQueryData] = useState("")
 
-    const onChange= e => setSearchData({...searchData, [e.target.name]:e.target.value}); 
+
+   
+    const onChange = (e) => setQueryData(e.target.value);
+
+    const onSubmit =(e)=>{
+        e.preventDefault();
+        if(queryData ===""){
+            setAlert("Please enter something" , "light");
+
+        }else {
+            // pass the text to the main App.js
+            console.log(queryData)
+            getRecipes(queryData);
+            setQueryData("");
+        }
+    }
 
     return (
         <div>
             <h1>Search for a recipe</h1>
-            <form className='form my-1'>
+            <form className='form my-1' onSubmit={onSubmit}>
                 <div className="form-group">
-                <input type='text' placeholder='Search' onChange={e =>onChange(e)} value={search} name= "search" />
-                <button className="search-button" type="submit">
-                    Search
+                <input type='text' placeholder='Search' onChange={e =>onChange(e)} value={queryData} name= "query" />
+                <button className="query-button" type="submit">
+                Search
                 </button>
             </div>
             </form>
@@ -30,4 +43,9 @@ const IdeasSearch=() =>{
     )
 }
 
-export default IdeasSearch
+IdeasSearch.propTypes = {
+    getRecipes: PropTypes.func.isRequired
+}
+
+
+export default connect(null, {getRecipes}) (IdeasSearch)

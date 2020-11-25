@@ -15,8 +15,6 @@ router.post("/", [auth, [
     check("title", "Title is required").not().isEmpty(),
     check("ingredients", "Ingredients is required").not().isEmpty(),
     check("type", "Type is required").not().isEmpty(),
-
-
     ]
 ],
 async (req, res) => {

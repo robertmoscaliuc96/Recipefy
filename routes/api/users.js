@@ -35,8 +35,6 @@ router.post('/',[
         if(user){
             return res.status(400).json({errors:[{msg:"User already exists"}] });
         }
-
-
         // create user
         user = new User({
             name,

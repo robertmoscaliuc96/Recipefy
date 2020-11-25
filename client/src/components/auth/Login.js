@@ -31,8 +31,9 @@ import { login} from '../../actions/auth';
         <Fragment>
           <section className="container">
           <h1 className="large text-primary">Log in</h1>
-          <p className="lead"><i className="fas fa-user"></i> Sign Into Your Account</p>
+
           <form className="form" onSubmit={e=>onSubmit(e)}>
+          
             <div className="form-group">
             </div>
             <div className="form-group">
