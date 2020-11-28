@@ -9,9 +9,6 @@ import IdeasItem from '../Ideas/IdeasItem';
 
 const Ideas= ({getRecipes, recipe:{recipes,loading}}) =>{
     
-
-    const [data, setData] = useState();
-
     useEffect(() => {
         getRecipes();
       }, []);

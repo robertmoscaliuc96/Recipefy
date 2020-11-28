@@ -6,8 +6,7 @@ import Alert from '../layout/Alert';
 import Posts from '../posts/Posts';
 import Calculator from '../calculator/Calculator'
 import Ideas from '../Ideas/Ideas'
-import One from '../TestPage/One'
-import Two from '../TestPage/Two'
+
 //import PrivateRoute from '../routing/PrivateRoute';
 import NotFound from '../layout/NotFound';
 
@@ -22,8 +21,6 @@ const Routes = () => {
                 <Route exact path='/posts' component={Posts}/>        
                 <Route exact path='/ideas' component={Ideas} />
                 <Route exact path='/calculator' component={Calculator} />
-                <Route exact path='/one' component={One} />
-                <Route exact path='/two' component={Two} />
                 <Route component={NotFound} />
             </Switch>
         </section>

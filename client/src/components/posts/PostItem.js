@@ -4,49 +4,54 @@ import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { addLike, removeLike, deletePost } from '../../actions/post';
+import food from '../../assets/food.jpg'
+
 
 const PostItem = ({
   addLike,
   removeLike,
   deletePost,
   auth,
-  post: { _id,user,name, title, type, ingredients, descriptions, time, review, date,likes },
+  post: { _id,user,name, title, type, ingredients, description, time, review, date,likes },
   showActions
 }) => (
+
+
   <div className='post bg-white p-1 my-1'>
-    <div>
-      <Link to={`/profile/${user}`}>
-        <img className='round-img'  alt='R' />
+    <div className="post-image">
         <h4>{name}</h4>
-      </Link>
     </div>
     <div>
-      <p className='my-1'>{title}</p>
+      <p className='title'>{title}</p>
+      <p className='my-1'>{description}</p>
       <p className='my-1'>{type}</p>
-      <p className='my-1'>{ingredients}</p>
-      <p className='my-1'>{descriptions}</p>
-      <p className='my-1'>{time}</p>
-      <p className='post-date'>
-        Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
-      </p>
+      <p className='my-1'><i class="fas fa-clipboard-list"> </i>{ingredients}</p>
+      <p className='my-1'><i className="fas fa-hourglass-half"> </i>  {time}</p>
+
 
       {showActions && (
         <Fragment>
+
+        <div className="btn-div">
           <button
             onClick={() => addLike(_id)}
             type='button'
-            className='btn btn-light'
+            className='btn-post'
           >
             <i className='fas fa-thumbs-up' />{' '}
             <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
           </button>
+          
           <button
             onClick={() => removeLike(_id)}
             type='button'
-            className='btn btn-light'
+            className='btn-post'
           >
             <i className='fas fa-thumbs-down' />
           </button>
+        </div>
+
+
           <Link to={`/posts/${_id}`} className='btn btn-primary'>
             Discussion{' '}
             {review.length > 0 && (
@@ -57,11 +62,14 @@ const PostItem = ({
             <button
               onClick={() => deletePost(_id)}
               type='button'
-              className='btn btn-danger'
+              className='btn-post btn-danger'
             >
               <i className='fas fa-times' />
             </button>
           )}
+          <p className='post-date'>
+              <Moment format='YYYY/MM/DD'>{date}</Moment>
+          </p>
         </Fragment>
       )}
     </div>

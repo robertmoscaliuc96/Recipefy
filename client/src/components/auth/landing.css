@@ -1,0 +1,105 @@
+
+.container-form{
+  height: 100vh;
+}
+
+.container-form{
+  background: url('../../assets/Landing/login.svg')  no-repeat center right;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+.container-form-sign{
+  background: url('../../assets/Landing/sign.svg')  no-repeat center left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  
+}
+
+
+.form-group{
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.5rem;
+  position: relative;
+}
+.form-group i {
+  text-align: center;
+  line-height: 55px;
+  color: #acacac;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+.form-group input {
+  background: transparent;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.img-sign{
+  width: 50rem;
+  margin-top: 15%;
+  margin-right: 15%;
+}
+.img-login{
+  width: 35rem;
+  margin-top: 15%;
+  margin-left: 15%;
+}
+
+.form-sign {
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+}
+
+
+
+.form-group input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+.form-group input:focus {
+  color: #533c3c;
+  font-weight: 500;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #333 !important;
+}
+
+
+@keyframes slide{
+  form{
+
+      transform: translateX(100%);
+  }
+  to{
+
+     transform:translateX(0);
+  }
+}
