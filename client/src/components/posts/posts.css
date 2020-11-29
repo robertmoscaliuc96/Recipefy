@@ -130,3 +130,13 @@
       display: flex;
       gap: 1rem;
   }
+  .green{
+      background-color: #4d908e;
+  }
+
+  .btn-danger{
+      background-color: #ef476f;
+      position: relative;
+      z-index: 1;
+      
+  }
