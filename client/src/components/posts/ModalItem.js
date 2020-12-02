@@ -3,28 +3,8 @@ import ReactDom from 'react-dom'
 import './modal.css';
 
 
-const MODAL_STYLES = {
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    backgroundColor: '#FFF',
-    padding: '50px',
-    zIndex: 1000
-  }
 
-  const OVERLAY_STYLES = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, .7)',
-    zIndex: 1000
-  }
-
-
-export default function ModalItem ({open, children, onClose}){
+export default function ModalItem ({open, children, onClose, name, title, type, ingredients, description, time, review, date,likes}){
     if(!open) return null
 
     return ReactDom.createPortal(
@@ -32,8 +12,45 @@ export default function ModalItem ({open, children, onClose}){
             <div className="modal-overlay"/>
 
             <div className="modal">
-                <button onClick={onClose}>Close Modal</button>
-                {children}
+
+            <div className="layer">
+                    <div className="modal-gradient">
+                            <div className="image-food">
+                            <h3 className="name"> {name}</h3>
+
+
+                    </div>
+                </div>
+
+                <div className="title-description">
+                <button onClick={onClose} className="btn-close"><i className="fas fa-times"></i></button>
+
+                    <p className="title">{title}</p>
+
+                    <h3 className="description"> {description}</h3>
+                </div>
+            </div>
+
+            <div className="layer">
+
+                <div className="time-type">
+                <h3> {type}</h3>
+                <h3> {time}</h3>
+                <h3> {date}</h3>
+                <h3> {likes}</h3>
+                    
+                </div>
+    
+                <div className="ingredients">
+                    <h3> {ingredients}</h3>
+    
+                </div>
+            
+
+            </div>
+
+
+
             </div>
 
         </>,

@@ -1,9 +1,20 @@
 
-
+.overlay{
+  background: rgb(79,88,97);
+  background: linear-gradient(180deg, rgba(79,88,97,0) 35%, rgba(33,37,41,0.8968181022408963) 91%);
+  position: relative;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  
+}
 
 .index-recipe{
     margin: auto;
-    padding: 12%;
+    padding: 10%;
 }
 
 .white{
@@ -13,11 +24,138 @@
 
 .posts{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap:2rem;
     margin: 4rem 4rem;
 }
-.form-group-text{
+
+
+.recipe-container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.recipe-background{
+    background: url('../../assets/Recipe/recipe1.svg')  no-repeat center bottom/cover;
+    height: 65vh;
+    position: relative;
+    z-index: -1;
+}
+
+
+/* Posts Page */
+.post-form .post-form-header {
+    background: var(--primary-color);
+    padding: 0.5rem;
+  }
+  
+  .post {
+    grid-gap: 2rem;
+    margin-top: -35%;
+    align-items: center;
+    border-radius: 15px;
+    min-height: 30rem;
+    box-shadow: -.3rem 0 1rem rgb(126, 126, 126);
+  }
+  .post-bottom{
+    margin: 1rem 1rem;
+  }
+  
+  .post > div:first-child {
+    text-align: center;
+  }
+  
+  .post img {
+    width: 80px;
+  }
+  
+  .post .comment-count {
+    background: var(--light-color);
+    color: var(--primary-color);
+    padding: 0.1rem 0.2rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+  }
+  
+  .post .post-date {
+    color: #aaa;
+    font-size: 0.8rem;
+
+  }
+
+  .post-name{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0.8rem;
+    color: white;
+    
+  }
+
+  .title-card{
+      font-size: 1.3rem;
+      font-weight: inherit;
+      text-align: center;
+      min-height: 4rem;
+  }
+  .card-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+  }
+  .actions-card{
+    background: lavender;
+  
+  }
+
+  .post-image{
+    background: url('../../assets/food.jpg')  no-repeat center center/cover;
+    height: 15rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: auto;
+    position: relative;
+    z-index: -1;
+  }
+
+  .btn-post{
+    width: 2.1rem;
+    height: 2.1rem;
+    background-color: #4d908e;
+    border: none;
+    outline: none;
+    padding: 1px;
+    border-radius: 49px;
+    color: rgb(63, 52, 52);
+    font-size: .9rem;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  .btn-div{
+      display: flex;
+      gap: 1rem;
+  }
+  .green{
+      background-color: #4d908e;
+  }
+
+  .btn-danger{
+      background-color: #ef476f;
+      position: relative;
+      z-index: 1;
+     display: none; 
+  }
+
+
+
+/* Form */
+  .form-group-text{
     max-width: 380px;
     width: 100%;
     background-color: #f0f0f0;
@@ -49,94 +187,3 @@
     font-size: 1.1rem;
     color: rgb(189, 184, 184);
 }
-
-.recipe-container{
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-}
-.recipe-background{
-    background: url('../../assets/Recipe/recipe1.svg')  no-repeat center bottom/cover;
-    height: 70vh;
-}
-
-
-/* Posts Page */
-.post-form .post-form-header {
-    background: var(--primary-color);
-    padding: 0.5rem;
-  }
-  
-  .post {
-
-    grid-gap: 2rem;
-    align-items: center;
-    border-radius: 15px;
-    box-shadow: -.3rem 0 1rem rgb(126, 126, 126);
-
-  }
-  
-  .post > div:first-child {
-    text-align: center;
-  }
-  
-  .post img {
-    width: 100px;
-  }
-  
-  .post .comment-count {
-    background: var(--light-color);
-    color: var(--primary-color);
-    padding: 0.1rem 0.2rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
-  }
-  
-  .post .post-date {
-    color: #aaa;
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .title{
-      font-size: 1.35rem;
-      font-weight: bold;
-      text-align: center;
-  }
-
-  .post-image{
-      
-    background: url('../../assets/food.jpg')  no-repeat center center/cover;
-    height: 20rem;
-  }
-
-  .btn-post{
-    width: 3.1rem;
-    background-color: #5995fd;
-    border: none;
-    outline: none;
-    height: 49px;
-    border-radius: 49px;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: 0.5s;
-  }
-
-  .btn-div{
-      display: flex;
-      gap: 1rem;
-  }
-  .green{
-      background-color: #4d908e;
-  }
-
-  .btn-danger{
-      background-color: #ef476f;
-      position: relative;
-      z-index: 1;
-      
-  }

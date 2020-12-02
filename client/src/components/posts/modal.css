@@ -5,11 +5,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: wheat;
-    padding: 50px;
+    background-color: rgb(255, 255, 255);
+    padding: 0;
     z-index: 1000;
-    width: 60rem;
-    height: 50rem;
+    width: 55rem;
+    height: 30rem;
     border-radius: 20px;
     
 
@@ -24,4 +24,53 @@
     background-color: rgba(0, 0, 0, .7);
     z-index: 1000;
 
+}
+.modal {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+}
+.layer{
+    display: grid;
+    grid-template-columns:2fr 3fr;
+    gap: 2rem;
+}
+
+.image-food{
+    background: url('../../assets/food.jpg')  no-repeat center center/cover;
+    height: 100%;
+    position: relative;
+}
+
+.modal-gradient{
+    position: relative;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+
+    background: rgb(79,88,97);
+    background: linear-gradient(180deg, rgba(79,88,97,0) 0%, rgba(33,37,41,1) 81%);
+}
+.name{
+    color: white;
+    position: fixed;
+    bottom: 39%;
+    left: 2%;
+
+
+
+}
+
+.btn-close{
+    margin-left: 92%;
+    margin-top: 2%;
+    background: transparent;
+    border: none;
+}
+.btn-close i {
+    font-size: 2rem;
+}
+
+.title{
+    font-size: 1.8rem;
+    font-weight: bold;
 }

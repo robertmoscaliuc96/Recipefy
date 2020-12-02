@@ -15,83 +15,89 @@ const PostItem = ({
   auth,
   post: { _id,user,name, title, type, ingredients, description, time, review, date,likes },
   showActions
+
 }) =>  {
+  
+  
+
 
   const [isOpen, setIsOpen] = useState(false);
 
-
-  const BUTTON_WRAPPER = {
-    position:'relative',
-    zIndex:1
-  }
-  const OTHER_CONTENT = {
-    position:'relative',
-    zIndex:2,
-    backgroundColor :"#3e1f47",
-    padding: '10px',
-  }
-
-
   return (
-    <div className='post bg-white p-1 my-1'>
-    <div className="post-image">
-        <h4>{name}</h4>
-    </div>
-    <div>
-      <p className='title'>{title}</p>
-      <p className='my-1'>{description}</p>
-      <p className='my-1'>{type}</p>
-      <p className='my-1'><i class="fas fa-clipboard-list"> </i>{ingredients}</p>
-      <p className='my-1'><i className="fas fa-hourglass-half"> </i>  {time}</p>
+    <div className='post'>
 
-
-      {showActions && (
-        <Fragment>
-
-        <div className="btn-div">
-          <button
-            onClick={() => addLike(_id)}
-            type='button'
-            className='btn-post'
-          >
-            <i className='fas fa-thumbs-up' />{' '}
-            <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
-          </button>
-
-          <button
-            onClick={() => removeLike(_id)}
-            type='button'
-            className='btn-post'
-          >
-            <i className='fas fa-thumbs-down' />
-          </button>
+      <div className="overlay" onClick={()=> setIsOpen(true)}>
+        <div className="post-image" >
+            <h4 className="post-name">{name}</h4>
+        </div>
+      </div>
+      
+      <div className="post-bottom">
+        <div className="title-card">
+          <p className='title-card'>{title}</p>
+        </div>
+        <div className="card-group">
+          <p className="type-card">{type}</p>
+          <p className='my-1'><i className="fas fa-hourglass-half"> </i> {time}</p>
         </div>
 
+        <div className="actions-card">
+          {showActions && (
+            <Fragment>
 
-          <button className='btn-post green'  onClick= {()=> setIsOpen(true)}>
-            More
-          </button>
-          {!auth.loading && user === auth.user._id && (
-            <button
-              onClick={() => deletePost(_id)}
-              type='button'
-              className='btn-post btn-danger'
-            >
-              <i className='fas fa-times' />
-            </button>
+            <div className="btn-div">
+              <button
+                onClick={() => addLike(_id)}
+                type='button'
+                className='btn-post'
+              >
+                <i className='fas fa-thumbs-up' />{' '}
+                <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
+              </button>
+
+              <button
+                onClick={() => removeLike(_id)}
+                type='button'
+                className='btn-post'
+              >
+                <i className='fas fa-thumbs-down' />
+              </button>
+            </div>
+
+              {!auth.loading && user === auth.user._id && (
+                <button
+                  onClick={() => deletePost(_id)}
+                  type='button'
+                  className='btn-post btn-danger'
+                >
+                  <i className='fas fa-times' />
+                </button>
+              )}
+              <p className='post-date'>
+                  <Moment format='YYYY/MM/DD'>{date}</Moment>
+              </p>
+            </Fragment>
           )}
-          <p className='post-date'>
-              <Moment format='YYYY/MM/DD'>{date}</Moment>
-          </p>
 
-          <ModalItem open={isOpen} onClose= {()=> setIsOpen(false)}>
+        </div>
+        <ModalItem open={isOpen}
+              
+              name={name}
+              title={title}
+              type={type}
+              ingredients={ingredients}
+              description={description}
+              time={time}
+              date={date}
 
-            Open Modal
+              
+              onClose= {()=> setIsOpen(false)}>
 
-          </ModalItem>
-        </Fragment>
-      )}
-    </div>
+
+              Open Modal
+
+            </ModalItem>
+      </div>
   </div>
   )
 
