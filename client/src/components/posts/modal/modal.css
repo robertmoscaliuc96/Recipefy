@@ -37,7 +37,7 @@
 }
 
 .image-food{
-    background: url('../../assets/food.jpg')  no-repeat center center/cover;
+    background: url('../../../assets/food.jpg')  no-repeat center center/cover;
     height: 50vh;
     position: relative;
     border-top-left-radius: 15px;
@@ -75,4 +75,10 @@
 .title{
     font-size: 1.8rem;
     font-weight: bold;
+}
+
+
+.top-bar-from{
+    display: grid;
+    grid-template-columns: 5fr 1fr;
 }

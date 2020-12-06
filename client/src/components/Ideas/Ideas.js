@@ -5,6 +5,7 @@ import Spinner from '../layout/Spinner';
 import { getRecipes } from '../../actions/recipe';
 import IdeasSearch from '../Ideas/IdeasSearch';
 import IdeasItem from '../Ideas/IdeasItem';
+import './ideas.css';
 
 
 const Ideas= ({getRecipes, recipe:{recipes,loading}}) =>{
@@ -17,19 +18,21 @@ const Ideas= ({getRecipes, recipe:{recipes,loading}}) =>{
 
       return loading ?<Spinner/>:(
         <Fragment>
-          <h1 className="large text-primary">Search Recipes</h1>
-          <IdeasSearch/>
-        {recipes.map(recipe => (
-        <IdeasItem key={recipe.recipe.calories} 
-        label={recipe.recipe.label} 
-        image={recipe.recipe.image} 
-        totalTime={recipe.recipe.totalTime} 
-        url={recipe.recipe.url} 
-        calories={recipe.recipe.calories} 
-        dietLabels={recipe.recipe.dietLabels} 
-        ingredients={recipe.recipe.ingredients}
-        />
-    ))}
+          <div className="ideas-container">
+              <h1 className="large text-primary">Search Recipes</h1>
+              <IdeasSearch/>
+                {recipes.map(recipe => (
+                <IdeasItem key={recipe.recipe.calories} 
+                label={recipe.recipe.label} 
+                image={recipe.recipe.image} 
+                totalTime={recipe.recipe.totalTime} 
+                url={recipe.recipe.url} 
+                calories={recipe.recipe.calories} 
+                dietLabels={recipe.recipe.dietLabels} 
+                ingredients={recipe.recipe.ingredients}
+                />
+        ))}
+          </div>
         </Fragment>
       );
     };

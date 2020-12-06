@@ -4,7 +4,9 @@ import './modal.css';
 
 
 
-export default function ModalItem ({open, children, onClose, name, title, type, ingredients, description, time, review, date,likes}){
+
+export default function ModalItem ({open, children, onClose, name, title, type, ingredients, description, time, review, date,likes}){ 
+    
     if(!open) return null
 
     return ReactDom.createPortal(

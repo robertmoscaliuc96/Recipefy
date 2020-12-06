@@ -7,27 +7,34 @@ import './posts.css';
 
 import PostItem from './PostItem';
 import PostForm from './PostForm';
+import ModalForm from './modal/ModalForm';
 
 const Posts = ({getPosts, post:{posts,loading}})=>{
 
     useEffect(() => {
         getPosts();
       }, [getPosts]);
+
+      const [isOpen, setIsOpen] = useState(false);
     
       return loading ?<Spinner/>:(
         <Fragment>
             <section className="recipe-container">
               <div className="recipe-background">
                 <div className="index-recipe">
+
                   <div className="post-text">
                     <h1 className="large text-primary white">Posts</h1>
                     <p className="lead white">
                       Share your recipe to the community
                     </p>
-                    <div className="btn-add-post" onClick={()=>console.log("111")}>
+                    <div className="btn-add-post" onClick={()=> setIsOpen(true)}>
                       Add Post
                     </div>
                   </div>
+                  <ModalForm open={isOpen} onClose= {()=> setIsOpen(false)}/>
+
+
                   <div className="post-illustration">
 
                   </div>

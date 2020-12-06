@@ -132,6 +132,9 @@ function Calculator() {
                     <input type='number' placeholder='55' onChange={e =>onChange(e)} value={water} min="55" max="75" name= "water" required/>
 
                     <button type='submit' className='btn btn-dark my-1' value='Submit'  >Calculate</button>
+                    <div className="btn-add-post" onClick={()=>console.log("111")}>
+                      Add Post
+                    </div>
             </form>
             {display? getDough() : null}
         </div>

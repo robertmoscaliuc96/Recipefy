@@ -5,7 +5,7 @@ import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { addLike, removeLike, deletePost } from '../../actions/post';
 import food from '../../assets/food.jpg';
-import ModalItem from './ModalItem';
+import ModalItem from './modal/ModalItem';
 
 
 const PostItem = ({

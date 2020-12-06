@@ -1,11 +1,10 @@
 .index-recipe{
   margin: auto;
   padding: 10% 10%;
-  position: relative;
   display: grid;
   grid: 1rem;
   grid-template-columns: 2fr 2fr;
-  z-index: 10;
+
 }
 
 .posts{
@@ -42,6 +41,10 @@
 .white{
     color: white;
 }
+.index-recipe{
+  position: relative;
+  z-index: 2;
+}
 
 .recipe-container{
     position: relative;
@@ -52,8 +55,7 @@
 .recipe-background{
     background: url('../../assets/Recipe/recipe1.svg')  no-repeat center bottom/cover;
     height: 65vh;
-    position: relative;
-    z-index: -1;
+
 }
 .post-illustration{
     background: url('../../assets/Recipe/cooking.svg')  no-repeat center center;
@@ -146,8 +148,9 @@
     color: rgb(247, 238, 238);
     font-size: 1.2rem;
     font-weight: 600;
-    margin: 10px 0;
-    cursor: pointer;
+    text-align: center;
+
+    margin-top: auto;
     transition: 0.5s;
   }
   .btn-add-post:hover{
