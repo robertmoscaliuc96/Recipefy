@@ -28,8 +28,9 @@ const PostItem = ({
 
       <div className="overlay" onClick={()=> setIsOpen(true)}>
         <div className="post-image" >
-            <h4 className="post-name">{name}</h4>
+            
         </div>
+        <h4 className="post-name">{name}</h4>
       </div>
       
       <div className="post-bottom">
@@ -37,8 +38,11 @@ const PostItem = ({
           <p className='title-card'>{title}</p>
         </div>
         <div className="card-group">
-          <p className="type-card">{type}</p>
+          <p className="type-card"><i className="fas fa-bread-slice"></i> {type}</p>
           <p className='my-1'><i className="fas fa-hourglass-half"> </i> {time}</p>
+        </div>
+        <div className="card-group">
+          <p className='my-1'><i className="fas fa-mitten"></i> Hard</p>
         </div>
 
         <div className="actions-card">

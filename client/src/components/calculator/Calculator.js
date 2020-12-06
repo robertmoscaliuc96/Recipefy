@@ -127,7 +127,7 @@ function Calculator() {
                     <label>Number of pizzas</label>
                     <input type='number' placeholder='1' onChange={e =>onChange(e)} value={numberPizza} name= "numberPizza" min="1" max="20" required/>
                     <label>Weight of Doughball (g)</label>
-                    <input type='number' placeholder='230' onChange={e =>onChange(e)} value={doughball}  name= "doughball" min="230" max="350" required/>
+                    <input type='number' placeholder='230' onChange={e =>onChange(e)} value={doughball}  name= "doughball" min="230" max="1350" required/>
                     <label>Amount of water (%)</label>
                     <input type='number' placeholder='55' onChange={e =>onChange(e)} value={water} min="55" max="75" name= "water" required/>
 

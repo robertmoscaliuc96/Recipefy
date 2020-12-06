@@ -1,3 +1,24 @@
+.index-recipe{
+  margin: auto;
+  padding: 10% 10%;
+  position: relative;
+  display: grid;
+  grid: 1rem;
+  grid-template-columns: 2fr 2fr;
+  z-index: 10;
+}
+
+.posts{
+  display: grid;
+  grid-template-columns: repeat(4, 20rem);
+  grid-gap:2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 4rem;
+  grid-auto-rows: auto;
+  place-items: center stretch;
+
+}
 
 .overlay{
   background: rgb(79,88,97);
@@ -7,28 +28,20 @@
   left: 0;
   width: auto;
   height: auto;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+.overlay:hover{
+  background: rgb(79,88,97);
+  background: linear-gradient(180deg, rgba(79, 88, 97, 0.479) 35%, rgba(33,37,41,0.8968181022408963) 91%);
 }
 
-.index-recipe{
-    margin: auto;
-    padding: 10%;
-}
 
 .white{
     color: white;
 }
-
-
-.posts{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap:2rem;
-    margin: 4rem 4rem;
-}
-
 
 .recipe-container{
     position: relative;
@@ -42,45 +55,30 @@
     position: relative;
     z-index: -1;
 }
+.post-illustration{
+    background: url('../../assets/Recipe/cooking.svg')  no-repeat center center;
+    height: 45vh;
+    position: relative;
+    top: -15%;
+    right: -10%;
+    z-index: -1;
+}
 
 
 /* Posts Page */
-.post-form .post-form-header {
-    background: var(--primary-color);
-    padding: 0.5rem;
-  }
-  
+
   .post {
-    grid-gap: 2rem;
-    margin-top: -35%;
     align-items: center;
     border-radius: 15px;
-    min-height: 30rem;
+    height: 32.7rem;
+    max-width: 21rem;
     box-shadow: -.3rem 0 1rem rgb(126, 126, 126);
   }
-  .post-bottom{
-    margin: 1rem 1rem;
-  }
   
-  .post > div:first-child {
-    text-align: center;
-  }
-  
-  .post img {
-    width: 80px;
-  }
-  
-  .post .comment-count {
-    background: var(--light-color);
-    color: var(--primary-color);
-    padding: 0.1rem 0.2rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
-  }
-  
-  .post .post-date {
+  .post-date {
     color: #aaa;
     font-size: 0.8rem;
+    text-align: right;
 
   }
 
@@ -89,16 +87,17 @@
     bottom: 0;
     left: 0;
     z-index: 2;
-    padding: 0.8rem;
-    color: white;
+    padding: 0.7rem;
+    color: rgba(255, 255, 255, 0.63);
     
   }
+
 
   .title-card{
       font-size: 1.3rem;
       font-weight: inherit;
       text-align: center;
-      min-height: 4rem;
+      min-height: 3rem;
   }
   .card-group{
     display: flex;
@@ -106,15 +105,16 @@
     justify-content: center;
     align-items: center;
     gap: 10%;
+    line-height: 0.1rem;
   }
   .actions-card{
-    background: lavender;
-  
+    border-top: 1px solid rgba(201, 194, 194, 0.568);
+    padding: 0 1rem;
   }
 
   .post-image{
     background: url('../../assets/food.jpg')  no-repeat center center/cover;
-    height: 15rem;
+    height: 19rem;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     width: auto;
@@ -123,23 +123,44 @@
   }
 
   .btn-post{
-    width: 2.1rem;
+    width: 4rem;
     height: 2.1rem;
-    background-color: #4d908e;
+    background-color: #2f618fd8;
     border: none;
     outline: none;
     padding: 1px;
     border-radius: 49px;
-    color: rgb(63, 52, 52);
+    color: rgb(226, 223, 223);
     font-size: .9rem;
     margin: 10px 0;
     cursor: pointer;
     transition: 0.5s;
+
+  }
+  .btn-add-post{
+    width: 150px;
+    background-color: #5995fd;
+    border: none;
+    height: 49px;
+    border-radius: 49px;
+    color: rgb(247, 238, 238);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .btn-add-post:hover{
+    background-color: #253b61;
+
+
   }
 
   .btn-div{
       display: flex;
-      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
   }
   .green{
       background-color: #4d908e;
@@ -149,7 +170,7 @@
       background-color: #ef476f;
       position: relative;
       z-index: 1;
-     display: none; 
+      display: none; 
   }
 
 
@@ -186,4 +207,9 @@
     font-weight: 600;
     font-size: 1.1rem;
     color: rgb(189, 184, 184);
+}
+
+.post-form .post-form-header {
+  background: var(--primary-color);
+  padding: 0.5rem;
 }

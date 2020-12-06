@@ -19,14 +19,20 @@ const Posts = ({getPosts, post:{posts,loading}})=>{
             <section className="recipe-container">
               <div className="recipe-background">
                 <div className="index-recipe">
-                  <h1 className="large text-primary white">Posts</h1>
-                  <p className="lead white">
-                     Share your recipe to the community
-                  </p>
-                  <button className="btn">
-                    Add Post
-                  </button>
-                </div>
+                  <div className="post-text">
+                    <h1 className="large text-primary white">Posts</h1>
+                    <p className="lead white">
+                      Share your recipe to the community
+                    </p>
+                    <div className="btn-add-post" onClick={()=>console.log("111")}>
+                      Add Post
+                    </div>
+                  </div>
+                  <div className="post-illustration">
+
+                  </div>
+
+                  </div>
 
               </div>
 
@@ -40,6 +46,7 @@ const Posts = ({getPosts, post:{posts,loading}})=>{
             </div>
 
             </section>
+
         </Fragment>
       );
     };
