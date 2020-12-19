@@ -29,17 +29,18 @@ const IdeasSearch=({getRecipes}) =>{
 
     return (
         <div className="search-bar">
-            <h1>Search for a recipe</h1>
-            <form className='form my-1' onSubmit={onSubmit}>
-                <div className="form-group">
-                <i className="fas fa-mitten"></i>
-                <input type='text' placeholder='Search' onChange={e =>onChange(e)} value={queryData} name= "query" />
+            <div className="frm">
+                <form className='form-ideas' onSubmit={onSubmit}>
+                    <div className="form-group ">
+                        <i className="fas fa-mitten"></i>
+                        <input type='text' placeholder='Search' onChange={e =>onChange(e)} value={queryData} name= "query" />
+                    </div>
+                    <button className="btn-ideas" type="submit">
+                    Search
+                    </button>
+                </form>
 
-                <button className="btn" type="submit">
-                Search
-                </button>
             </div>
-            </form>
 
         </div>
     )

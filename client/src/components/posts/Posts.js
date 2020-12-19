@@ -6,7 +6,6 @@ import { getPosts } from '../../actions/post';
 import './posts.css';
 
 import PostItem from './PostItem';
-import PostForm from './PostForm';
 import ModalForm from './modal/ModalForm';
 
 const Posts = ({getPosts, post:{posts,loading}})=>{
@@ -28,9 +27,9 @@ const Posts = ({getPosts, post:{posts,loading}})=>{
                     <p className="lead white">
                       Share your recipe to the community
                     </p>
-                    <div className="btn-add-post" onClick={()=> setIsOpen(true)}>
+                    <button className="btn-add-post" onClick={()=> setIsOpen(true)}>
                       Add Post
-                    </div>
+                    </button>
                   </div>
                   <ModalForm open={isOpen} onClose= {()=> setIsOpen(false)}/>
 

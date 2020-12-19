@@ -1,0 +1,88 @@
+
+.modal-form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    padding: 0;
+    z-index: 1000;
+    width: 75rem;
+    height: 45rem;
+    border-radius: 15px;
+    box-shadow: -.5rem 0 1.4rem rgba(37, 34, 34, 0.644);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.inner-form{
+
+
+}
+
+.image-form{
+    background: url('../../../assets/Recipe/form.jpg') no-repeat center center/cover;
+    height: 100%;
+    width: 30rem;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+}
+.btn-close-post{
+        font-size: 2rem;
+        position: relative;
+        left: 95%;
+
+}
+.btn-close-post i {
+    transition-duration: 300ms;
+}
+.btn-close-post i:hover{
+    color: chocolate;
+}
+
+.top-bar-form h2{
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+/* Form */
+.form-group-text{
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 115px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.5rem;
+    position: relative;
+}
+
+.form-group-text i {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+}
+
+.form-group-text textarea{
+    background: transparent;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: rgb(189, 184, 184);
+}
+
+.post-form .post-form-header {
+  background: var(--primary-color);
+  padding: 0.5rem;
+}
+

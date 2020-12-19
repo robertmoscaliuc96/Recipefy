@@ -14,7 +14,7 @@ const Routes = () => {
 
     return (
         <section className='container'>
-            <Alert/>
+
             <Switch>
                 <Route exact path='/register' component={Register}/>
                 <Route exact path='/login' component={Login}/>

@@ -21,7 +21,7 @@
 
 .overlay{
   background: rgb(79,88,97);
-  background: linear-gradient(180deg, rgba(79,88,97,0) 35%, rgba(33,37,41,0.8968181022408963) 91%);
+  background: linear-gradient(180deg, rgba(67, 70, 73, 0) 35%, rgba(33,37,41,0.8968181022408963) 91%);
   position: relative;
   top: 0;
   left: 0;
@@ -33,7 +33,7 @@
   cursor: pointer;
 }
 .overlay:hover{
-  background: rgb(79,88,97);
+  background: rgb(72, 76, 80);
   background: linear-gradient(180deg, rgba(79, 88, 97, 0.479) 35%, rgba(33,37,41,0.8968181022408963) 91%);
 }
 
@@ -43,7 +43,7 @@
 }
 .index-recipe{
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .recipe-container{
@@ -121,7 +121,7 @@
     border-top-right-radius: 15px;
     width: auto;
     position: relative;
-    z-index: -1;
+    z-index: 0;
   }
 
   .btn-post{
@@ -178,41 +178,3 @@
 
 
 
-/* Form */
-  .form-group-text{
-    max-width: 380px;
-    width: 100%;
-    background-color: #f0f0f0;
-    margin: 10px 0;
-    height: 115px;
-    border-radius: 55px;
-    display: grid;
-    grid-template-columns: 15% 85%;
-    padding: 0 0.5rem;
-    position: relative;
-}
-
-.form-group-text i {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    line-height: 55px;
-    color: #acacac;
-    transition: 0.5s;
-    font-size: 1.1rem;
-}
-
-.form-group-text textarea{
-    background: transparent;
-    outline: none;
-    border: none;
-    line-height: 1;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: rgb(189, 184, 184);
-}
-
-.post-form .post-form-header {
-  background: var(--primary-color);
-  padding: 0.5rem;
-}

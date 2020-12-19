@@ -12,8 +12,6 @@
     height: 40rem;
     border-radius: 15px;
     box-shadow: -.5rem 0 1.4rem rgba(37, 34, 34, 0.644);
-    
-
 }
 
 .modal-overlay{
@@ -26,10 +24,6 @@
     z-index: 1000;
 }
 
-.modal {
-    display: grid;
-    grid-template-columns: repeat(1fr);
-}
 .layer{
     display: grid;
     grid-template-columns:2fr 3fr;
@@ -57,9 +51,6 @@
     position: fixed;
     bottom: 39%;
     left: 2%;
-
-
-
 }
 
 .btn-close{
@@ -76,7 +67,6 @@
     font-size: 1.8rem;
     font-weight: bold;
 }
-
 
 .top-bar-from{
     display: grid;

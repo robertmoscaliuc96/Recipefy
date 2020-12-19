@@ -18,7 +18,7 @@ export const getRecipes = (query) => async dispatch => {
    
     try {
         setLoading(true)
-        const res = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=10&calories=591-722&health=alcohol-free`);
+        const res = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=20&calories=591-722&health=alcohol-free`);
         const data = await res.json();
 
         dispatch({

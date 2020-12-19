@@ -1,11 +1,10 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { addLike, removeLike, deletePost } from '../../actions/post';
-import food from '../../assets/food.jpg';
 import ModalItem from './modal/ModalItem';
+import './posts.css';
 
 
 const PostItem = ({
@@ -17,9 +16,6 @@ const PostItem = ({
   showActions
 
 }) =>  {
-  
-  
-
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,10 +23,13 @@ const PostItem = ({
     <div className='post'>
 
       <div className="overlay" onClick={()=> setIsOpen(true)}>
-        <div className="post-image" >
-            
+        <div className="overlay">
+          <div className="post-image" >
+              
+          </div>
+          <h4 className="post-name">{name}</h4>
+
         </div>
-        <h4 className="post-name">{name}</h4>
       </div>
       
       <div className="post-bottom">
@@ -96,10 +95,7 @@ const PostItem = ({
 
               
               onClose= {()=> setIsOpen(false)}>
-
-
-              Open Modal
-
+                Open Modal
             </ModalItem>
       </div>
   </div>
