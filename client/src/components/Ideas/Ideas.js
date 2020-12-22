@@ -5,7 +5,7 @@ import Spinner from '../layout/Spinner';
 import { getRecipes } from '../../actions/recipe';
 import IdeasSearch from '../Ideas/IdeasSearch';
 import IdeasItem from '../Ideas/IdeasItem';
-import MockItem from '../Ideas/MockItem';
+
 import './ideas.css';
 
 
@@ -30,10 +30,7 @@ const Ideas= ({getRecipes, recipe:{recipes,loading}}) =>{
 
                   </div>
               </div>
-
               <IdeasSearch/>
-              <div className="ideas">
-              <MockItem/>
               <div className="ideas">
                   {recipes.map(recipe => (
                   <IdeasItem key={recipe.recipe.calories} 
@@ -47,12 +44,8 @@ const Ideas= ({getRecipes, recipe:{recipes,loading}}) =>{
                   digest={recipe.recipe.digest}
                   />
                   ))}
-
               </div>
-
-              </div>
-
-          </div>
+            </div>
           
         </Fragment>
       );

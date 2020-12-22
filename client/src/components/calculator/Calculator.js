@@ -1,4 +1,5 @@
-import React, {useState, useEffect }from 'react';
+import React, {useState }from 'react';
+import './calculator.css'
 
 
 
@@ -91,6 +92,7 @@ function Calculator() {
         })
     }
 
+    
 
 
     const handleClick = ({styleDough}) => {
@@ -109,34 +111,38 @@ function Calculator() {
     }
 
     return (
-        <div>
-            <h1> Dough Calculator</h1>
-            <p>Dough Style</p>
-            <form onSubmit={e => {
-            e.preventDefault();
-            setDisplay(true);
-            handleClick({styleDough, numberPizza, water,doughball});
-          }}>
-                <label>Choose a dough style:</label>
-                <select name="styleDough" value={styleDough}  onChange={e =>onChange(e)} required>
-                    <option value="american">American pizza</option>
-                    <option value="napoletan">Napoletan pizza</option>
-                    <option value="sicilian">Sicilian pizza</option>
-                    <option value="custom">Custom</option>
-                </select>
-                    <label>Number of pizzas</label>
-                    <input type='number' placeholder='1' onChange={e =>onChange(e)} value={numberPizza} name= "numberPizza" min="1" max="20" required/>
-                    <label>Weight of Doughball (g)</label>
-                    <input type='number' placeholder='230' onChange={e =>onChange(e)} value={doughball}  name= "doughball" min="230" max="1350" required/>
-                    <label>Amount of water (%)</label>
-                    <input type='number' placeholder='55' onChange={e =>onChange(e)} value={water} min="55" max="75" name= "water" required/>
+        <div className="calculator-container">
+            <div className="calculator-inner">
+                <div className="calculator-text">
+                    <h1> Dough Calculator</h1>
+                    <p>Dough Style</p>
+                </div>
+                <div className="calculator-box">
+                    <form onSubmit={e => {
+                    e.preventDefault();
+                    setDisplay(true);
+                    handleClick({styleDough, numberPizza, water,doughball});
+                        }}>
+                        <label>Choose a dough style:</label>
+                        <select name="styleDough" value={styleDough}  onChange={e =>onChange(e)} required>
+                            <option value="american">American pizza</option>
+                            <option value="napoletan">Napoletan pizza</option>
+                            <option value="sicilian">Sicilian pizza</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                            <label>Number of pizzas</label>
+                            <input type='number' placeholder='1' onChange={e =>onChange(e)} value={numberPizza} name= "numberPizza" min="1" max="20" required/>
+                            <label>Weight of Doughball (g)</label>
+                            <input type='number' placeholder='230' onChange={e =>onChange(e)} value={doughball}  name= "doughball" min="230" max="1350" required/>
+                            <label>Amount of water (%)</label>
+                            <input type='number' placeholder='55' onChange={e =>onChange(e)} value={water} min="55" max="75" name= "water" required/>
 
-                    <button type='submit' className='btn btn-dark my-1' value='Submit'  >Calculate</button>
-                    <div className="btn-add-post" onClick={()=>console.log("111")}>
-                      Add Post
-                    </div>
-            </form>
-            {display? getDough() : null}
+                            <button type='submit' className='btn btn-dark my-1' value='Submit'  >Calculate</button>
+                    </form>
+
+                </div>
+                {display? getDough() : null}
+            </div>
         </div>
     )
 }

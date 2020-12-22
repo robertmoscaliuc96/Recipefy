@@ -54,6 +54,18 @@ form{
   line-height: 1;
   font-weight: 600;
   font-size: 1.1rem;
+  color: #acacac;
+}
+.select-form {
+  color: #acacac;
+}
+.form-group select {
+  background: transparent;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
   color: #333;
 }
 
@@ -80,7 +92,15 @@ form{
   color: #aaa;
   font-weight: 500;
 }
+.select-form select::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
 .form-group input:focus {
+  color: #533c3c;
+  font-weight: 500;
+}
+.form-group select:focus {
   color: #533c3c;
   font-weight: 500;
 }
@@ -88,6 +108,13 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #333 !important;
+}
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: #333 !important;
 }

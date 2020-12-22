@@ -10,13 +10,14 @@ export default function ModalItem ({open, children, onClose, ingredients}){
         <>
             <div className="modal-overlay"/>
             <div className="modal-ideas">
-                <button onClick={onClose} className="btn-modal-ideas"><i className="fas fa-times"></i></button>
-                <div>
-                    <ol>
+                <div onClick={onClose} className="btn-modal-ideas"><i className="fas fa-times"></i></div>
+                <div className="modal-ingredients-box">
+                    <h1>Ingredients</h1>
+                    <ul>
                         {ingredients.map(ingredient =>(
-                            <li >{ingredient.text}</li>
+                            <li className="modal-ingredients">{ingredient.text}</li>
                         ))}
-                    </ol>
+                    </ul>
                 </div>
             </div>
 

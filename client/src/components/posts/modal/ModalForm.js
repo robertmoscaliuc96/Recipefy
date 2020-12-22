@@ -26,6 +26,20 @@ const ModalForm = ({open,onClose,addPost})=> {
     const {title,description,type,ingredients,time,keyword} = formData;
     //const [title,text,setText] = useState('')
     const onChange= e => setFormData({...formData, [e.target.name]:e.target.value}); 
+    
+    const onSubmit = e => {
+        e.preventDefault();
+        addPost({ title,description,type,ingredients,time,keyword });    
+        setFormData({
+            title: "",
+            type: "",
+            description:"",
+            ingredients:"",
+            time:"",
+            keyword: "",
+          });
+    }
+
   
       
     if(!open) return null
@@ -48,11 +62,7 @@ const ModalForm = ({open,onClose,addPost})=> {
                         </div>
                         <form
                         className='form my-1'
-                        onSubmit={e => {
-                            e.preventDefault();
-                            addPost({ title,description,type,ingredients,time,keyword });    
-                            setFormData("")   
-                        }}
+                        onSubmit={e => onSubmit(e)}
                         >
 
                         <div className="form-group">
@@ -67,7 +77,15 @@ const ModalForm = ({open,onClose,addPost})=> {
 
                         <div className="form-group">
                             <i class="fas fa-seedling"></i>
-                            <input type='text' placeholder='Type' onChange={e =>onChange(e)} value={type} name= "type" />
+                            <select name="type" value={type} onChange={e =>onChange(e)} className="select-form">
+                                <option>*Select the type</option>
+                                <option value="Vegan">Vegan</option>
+                                <option value="Vegetarian">Vegetarian</option>
+                                <option value="Databases">Databases</option>
+                                <option value="High Proteins">High Protein</option>
+                                <option value="High Carbs">High Carbs</option>
+                                <option value="Balanced">Balanced</option>
+                            </select>
                         </div>
 
                         <div className="form-group">
