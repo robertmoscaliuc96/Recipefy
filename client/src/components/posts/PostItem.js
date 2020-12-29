@@ -12,7 +12,7 @@ const PostItem = ({
   removeLike,
   deletePost,
   auth,
-  post: { _id,user,name, title, type, ingredients, description, time, review, date,likes },
+  post: { _id,user,name, title, type, ingredients, description, time, date,likes },
   showActions
 
 }) =>  {
@@ -25,7 +25,15 @@ const PostItem = ({
       <div className="overlay" onClick={()=> setIsOpen(true)}>
         <div className="overlay">
           <div className="post-image" >
-              
+            {!auth.loading && user === auth.user._id && (
+                  <button
+                    onClick={() => deletePost(_id)}
+                    type='button'
+                    className='btn-post delete'
+                  >
+                    <i className='fas fa-times' />
+                  </button>
+                )}
           </div>
           <h4 className="post-name">{name}</h4>
 
@@ -67,15 +75,8 @@ const PostItem = ({
               </button>
             </div>
 
-              {!auth.loading && user === auth.user._id && (
-                <button
-                  onClick={() => deletePost(_id)}
-                  type='button'
-                  className='btn-post btn-danger'
-                >
-                  <i className='fas fa-times' />
-                </button>
-              )}
+
+
               <p className='post-date'>
                   <Moment format='YYYY/MM/DD'>{date}</Moment>
               </p>
@@ -93,7 +94,6 @@ const PostItem = ({
               time={time}
               date={date}
 
-              
               onClose= {()=> setIsOpen(false)}>
                 Open Modal
             </ModalItem>

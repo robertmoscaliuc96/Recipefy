@@ -43,14 +43,17 @@ function Calculator() {
         var sugar = flour * sugarPercent;
 
         return (
-        <div>
-                <h1> fullQuantity : {fullQuantity} </h1>
-                <h1> Flour : {flour} </h1>
-                <h1> Water :{waterRequired} </h1>
-                <h1> Yeast : {yeast}</h1>
-                <h1> Salt : {salt}</h1>
-                <h1> Sugar : {sugar}</h1>
-                <h1> Olive Oil : {oil}</h1>
+        <div className="calc-result">
+                <h1 className="result">Results</h1>
+                <p> Full Quantity : {fullQuantity.toFixed(0)} (g) </p>
+                <p> Flour : {flour.toFixed(0)} (g) </p>
+                <p> Water :{waterRequired.toFixed(0)} (ml)</p>
+                <p> Yeast : {yeast.toFixed(1)} (g)</p>
+                <p> Salt : {salt.toFixed(1)} (g)</p>
+                {sugar===0 ? null : <p> Sugar : {sugar.toFixed(0)} (g)</p>}
+                {oil===0 ? null : <p> Olive Oil : {oil.toFixed(0)} (g)</p>}
+                
+                
         </div>            
             )
     };
@@ -67,8 +70,8 @@ function Calculator() {
     const americanDough = () => {
         setVariables({
             saltPercent:"0.02",
-            yestPercent:"0.01.5",
-            waterMlPercent:"0.60",
+            yestPercent:"0.015",
+            waterMl:"0.60",
             oilPercent:"0.2",
             sugarPercent: "0.1"
         })
@@ -77,22 +80,11 @@ function Calculator() {
         setVariables({
             saltPercent:"0.0021",
             yestPercent:"0.015",
-            waterMlPercent:"60",
+            waterMl:"0.60",
             oilPercent:"1.5",
             sugarPercent: "0"
         })
     }
-    const burgerDough = () => {
-        setVariables({
-            saltPercent:"0.002",
-            yestPercent:"0.004",
-            waterMlPercent:"400",
-            oilPercent:"2",
-            sugarPercent: "1"
-        })
-    }
-
-    
 
 
     const handleClick = ({styleDough}) => {
@@ -104,8 +96,6 @@ function Calculator() {
         }else if(styleDough==="sicilian"){
             sicilianDough();
         }
-
-
         console.log(variables)
 
     }
@@ -114,8 +104,14 @@ function Calculator() {
         <div className="calculator-container">
             <div className="calculator-inner">
                 <div className="calculator-text">
-                    <h1> Dough Calculator</h1>
-                    <p>Dough Style</p>
+                    <div>
+                        <h1> Dough Calculator</h1>
+                        <p>Find the perfect quantity for you favorite pizza style</p>
+                        
+                    </div>
+                    <div className="calc-result">
+                        {display? getDough() : null}
+                    </div>
                 </div>
                 <div className="calculator-box">
                     <form onSubmit={e => {
@@ -124,24 +120,41 @@ function Calculator() {
                     handleClick({styleDough, numberPizza, water,doughball});
                         }}>
                         <label>Choose a dough style:</label>
-                        <select name="styleDough" value={styleDough}  onChange={e =>onChange(e)} required>
-                            <option value="american">American pizza</option>
-                            <option value="napoletan">Napoletan pizza</option>
-                            <option value="sicilian">Sicilian pizza</option>
-                            <option value="custom">Custom</option>
-                        </select>
-                            <label>Number of pizzas</label>
+                        <div className="form-group calc-form">
+                            <i className="fas fa-shopping-basket"></i>
+                            <select name="styleDough" value={styleDough}  onChange={e =>onChange(e)} required>
+                                <option value="american">American pizza</option>
+                                <option value="napoletan">Napoletan pizza</option>
+                                <option value="sicilian">Sicilian pizza</option>
+                                <option value="custom">Custom</option>
+                            </select>
+
+                        </div>
+
+                        <label>Number of pizzas</label>
+                        <div className="form-group calc-form">
+                            <i className="fas fa-shopping-basket"></i>
                             <input type='number' placeholder='1' onChange={e =>onChange(e)} value={numberPizza} name= "numberPizza" min="1" max="20" required/>
-                            <label>Weight of Doughball (g)</label>
-                            <input type='number' placeholder='230' onChange={e =>onChange(e)} value={doughball}  name= "doughball" min="230" max="1350" required/>
+                        </div>
+
+                        <label>Weight of Doughball (g)</label>
+                        <div className="form-group calc-form">
+                            <i className="fas fa-shopping-basket"></i>
+                            <input type='number' placeholder='240' onChange={e =>onChange(e)} value={doughball}  name= "doughball" min="240" max="1350" required/>
+                        </div>
+
                             <label>Amount of water (%)</label>
+                        <div className="form-group calc-form">
+                            <i className="fas fa-shopping-basket"></i>
                             <input type='number' placeholder='55' onChange={e =>onChange(e)} value={water} min="55" max="75" name= "water" required/>
 
+                        </div>
                             <button type='submit' className='btn btn-dark my-1' value='Submit'  >Calculate</button>
+
                     </form>
 
                 </div>
-                {display? getDough() : null}
+                
             </div>
         </div>
     )

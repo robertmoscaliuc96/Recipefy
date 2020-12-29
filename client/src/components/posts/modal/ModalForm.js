@@ -81,7 +81,7 @@ const ModalForm = ({open,onClose,addPost})=> {
                                 <option>*Select the type</option>
                                 <option value="Vegan">Vegan</option>
                                 <option value="Vegetarian">Vegetarian</option>
-                                <option value="Databases">Databases</option>
+                                <option value="Low-Carb">Low-Carb</option>
                                 <option value="High Proteins">High Protein</option>
                                 <option value="High Carbs">High Carbs</option>
                                 <option value="Balanced">Balanced</option>
@@ -90,7 +90,7 @@ const ModalForm = ({open,onClose,addPost})=> {
 
                         <div className="form-group">
                             <i className="far fa-clock"></i>
-                            <input type='text' placeholder='Time' onChange={e =>onChange(e)} value={time} name= "time" />
+                            <input type='number' min="5" step="5" max="300" placeholder='Time' onChange={e =>onChange(e)} value={time} name= "time" />
                         </div>
 
                         <div className="form-group-text">

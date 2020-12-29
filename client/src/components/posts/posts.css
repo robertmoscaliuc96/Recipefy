@@ -54,7 +54,7 @@
 }
 .recipe-background{
     background: url('../../assets/Recipe/recipe1.svg')  no-repeat center bottom/cover;
-    height: 65vh;
+    height: 75vh;
 
 }
 .post-illustration{
@@ -175,6 +175,18 @@
       z-index: 1;
       display: none; 
   }
+  .delete{
+    background-color: #c70039;
+    color: white;
+    width: 34px;
+  }
+
+  .post-image button{
+    position: relative;
+    left: 85%;
+
+  }
+
 
 
 

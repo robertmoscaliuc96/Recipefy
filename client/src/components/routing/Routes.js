@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Register from '../auth/Register';
 import Login from '../auth/Login';
-import Alert from '../layout/Alert';
+//import Alert from '../layout/Alert';
 import Posts from '../posts/Posts';
 import Calculator from '../calculator/Calculator'
 import Ideas from '../Ideas/Ideas'

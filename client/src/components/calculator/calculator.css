@@ -11,9 +11,42 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
+.calculator-text{
+    display: flex;
+    flex-flow: column;
+    gap: 4rem;
+}
+
+.calculator-text h1{
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.calculator-text p{
+    color: white;
+    font-size: 1.5rem;
+}
+
+
 
 .calculator-box{
-    background-color: blanchedalmond;
+    background-color: rgb(255, 255, 255);
     border-radius: 15px;
-    box-shadow: -.3rem 0 1rem rgb(126, 126, 126);
+    box-shadow: -.3rem 0 1rem rgb(59, 59, 59);
+    padding: 1.5rem;
+    font-size: 1.3rem;
+}
+.calc-form{
+    max-width: 240px;
+}
+
+.calc-result h1{
+    font-size: 1.9rem;
+}
+.calc-result p{
+    font-size: 1.3rem;
+}
+
+.result {
+    font-size: 3rem;
 }

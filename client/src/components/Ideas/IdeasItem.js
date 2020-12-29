@@ -19,7 +19,7 @@ const IdeasItem = ({label, image, totalTime, url, calories,dietLabels,ingredient
 
 
                 <div className="ideas-group">
-                    <p className="ideas-totalTime"><i className="far fa-hourglass"></i> {totalTime} min</p>
+                    <p className="ideas-totalTime"><i className="far fa-hourglass"></i> {totalTime ===0 ? "20" : totalTime} min</p>
                     <p className="ideas-dietLabels">{
                         dietLabels.length ===0 ? "Blanaced" : dietLabels
                         }</p>

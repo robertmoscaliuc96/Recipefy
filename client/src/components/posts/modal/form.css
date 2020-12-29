@@ -15,11 +15,6 @@
     grid-template-columns: 1fr 2fr;
 }
 
-.inner-form{
-
-
-}
-
 .image-form{
     background: url('../../../assets/Recipe/form.jpg') no-repeat center center/cover;
     height: 100%;
