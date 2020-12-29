@@ -42,15 +42,15 @@
     z-index: 1000;
     height: 100%;
     width: 100%;
-
     background: rgb(79,88,97);
     background: linear-gradient(180deg, rgba(79,88,97,0) 0%, rgba(33,37,41,1) 81%);
 }
 .name{
     color: white;
     position: fixed;
-    bottom: 39%;
+    bottom: 34%;
     left: 2%;
+
 }
 
 .btn-close{
@@ -58,6 +58,10 @@
     margin-top: 2%;
     background: transparent;
     border: none;
+    cursor: pointer;
+}
+.btn-close i{
+    color: brown;
 }
 .btn-close i {
     font-size: 2rem;
@@ -71,4 +75,35 @@
 .top-bar-from{
     display: grid;
     grid-template-columns: 5fr 1fr;
+}
+.title-description{
+    margin: 2rem 2rem;
+    margin-right: 4rem;
+}
+
+.title{
+    margin-bottom: 2rem;
+    border-bottom: 1px solid black;
+}
+.description{
+    margin-bottom: 2rem;
+    min-height: 240px;
+    border-bottom: 1px solid black;
+}
+
+.ingredients{
+    margin: 0rem 2rem;
+}
+
+.time-type{
+    margin: 2rem 2rem;
+    line-height: 250%;
+}
+.btn-post-modal{
+    justify-content: center;
+    align-items: center;
+}
+.modal-btn-div{
+    position: relative;
+    top: 25%;
 }

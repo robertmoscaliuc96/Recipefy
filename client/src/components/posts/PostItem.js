@@ -46,7 +46,7 @@ const PostItem = ({
         </div>
         <div className="card-group">
           <p className="type-card"><i className="fas fa-bread-slice"></i> {type}</p>
-          <p className='my-1'><i className="fas fa-hourglass-half"> </i> {time}</p>
+          <p className='my-1'><i className="fas fa-hourglass-half"> </i> {time}min</p>
         </div>
         <div className="card-group">
           <p className='my-1'><i className="fas fa-mitten"></i> Hard</p>
@@ -93,6 +93,7 @@ const PostItem = ({
               description={description}
               time={time}
               date={date}
+              likes={likes}
 
               onClose= {()=> setIsOpen(false)}>
                 Open Modal

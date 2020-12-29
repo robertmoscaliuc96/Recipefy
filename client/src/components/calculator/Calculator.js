@@ -119,6 +119,7 @@ function Calculator() {
                     setDisplay(true);
                     handleClick({styleDough, numberPizza, water,doughball});
                         }}>
+                        <h1>Dough Calculator</h1>
                         <label>Choose a dough style:</label>
                         <div className="form-group calc-form">
                             <i className="fas fa-shopping-basket"></i>
