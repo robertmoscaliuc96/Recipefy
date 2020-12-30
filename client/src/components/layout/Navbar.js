@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {logout} from '../../actions/auth'
+import Logo from '../../assets/recipeLogo.svg'
 
 const Navbar=({auth: {isAuthenticated, loading}, logout}) =>{
   
@@ -44,7 +45,7 @@ const Navbar=({auth: {isAuthenticated, loading}, logout}) =>{
         <nav className="navbar bg-dark">
         <h1>
           <Link to="/">
-          <i className="fas fa-utensils"></i> Rob's Cooks
+            <img src={Logo} alt="Cook in home" className="logo"></img>
           </Link>
         </h1>
       {!loading && (<Fragment>{isAuthenticated ? authLinks : guessLinks}</Fragment>)}

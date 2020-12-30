@@ -1,10 +1,10 @@
 .calculator-container{
     position: relative;
     width: 100%;
-    min-height: 100vh;
+
     overflow: hidden;
-    background: url('../../assets/Calculator/calculator.svg')  no-repeat center bottom/cover;
-    height: 100vh;
+    background: url('../../assets/Calculator/calculatorbg.svg')  no-repeat center bottom/cover;
+    height: 91vh;
 }
 .calculator-inner{
     margin: 12% 12%;
@@ -32,7 +32,7 @@
 .calculator-box{
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
-    box-shadow: -.3rem 0 1rem rgb(59, 59, 59);
+    box-shadow: -.3rem 0 1rem rgb(83, 90, 102);
     padding: 1.5rem;
     font-size: 1.3rem;
 }

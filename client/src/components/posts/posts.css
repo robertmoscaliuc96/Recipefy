@@ -53,8 +53,8 @@
     overflow: hidden;
 }
 .recipe-background{
-    background: url('../../assets/Recipe/recipe1.svg')  no-repeat center bottom/cover;
-    height: 75vh;
+    background: url('../../assets/Recipe/postBackground1.svg')  no-repeat center bottom/cover;
+    height: 85vh;
 
 }
 .post-illustration{
@@ -81,7 +81,10 @@
     color: #aaa;
     font-size: 0.8rem;
     text-align: right;
-
+  }
+  .post-text{
+    position: relative;
+    top: 20%;
   }
 
   .post-name{
