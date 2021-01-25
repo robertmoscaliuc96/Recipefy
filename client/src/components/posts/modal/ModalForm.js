@@ -7,7 +7,10 @@ import PostForm from '../PostForm';
 import PropTypes from 'prop-types';
 import Alert from '../../layout/Alert'
 
+import { FilePond, registerPlugin } from 'react-filepond';
 
+// Import FilePond styles
+import 'filepond/dist/filepond.min.css';
 
 
 const ModalForm = ({open,onClose,addPost})=> { 
@@ -21,6 +24,7 @@ const ModalForm = ({open,onClose,addPost})=> {
         ingredients:"",
         time:"",
         keyword: "",
+        cover:""
       });
   
     const {title,description,type,ingredients,time,keyword} = formData;
@@ -37,8 +41,11 @@ const ModalForm = ({open,onClose,addPost})=> {
             ingredients:"",
             time:"",
             keyword: "",
+            cover:""
           });
     }
+
+
 
   
       
@@ -103,6 +110,10 @@ const ModalForm = ({open,onClose,addPost})=> {
                                 value={description}
                                 onChange={e =>onChange(e)}
                             />          
+                        </div>
+                        <div>
+                            <FilePond type="file" name="cover" className="filepond" allowMultiple={false} maxFiles={1} server='/api'/>
+
                         </div>
 
                         <input type='submit' className='btn btn-dark my-1' value='Submit' />

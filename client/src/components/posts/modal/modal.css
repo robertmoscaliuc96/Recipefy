@@ -107,3 +107,11 @@
     position: relative;
     top: 25%;
 }
+
+.filepond--item{
+    width: calc(50% - .5em);
+}
+
+.filepond--root {
+    max-height: 5em;
+}

@@ -1,16 +1,21 @@
 const express = require ("express");
 const router = express.Router();
+
+
 const {check, validationResult} = require('express-validator');
 const auth = require("../../middleware/auth");
 
 const Post = require('../../models/Post');
 const User = require('../../models/User');
 
+const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
+
 
 
 // @route   POST api/posts
 // @desc    Create a post
 // @access  Private 
+
 router.post("/", [auth, [
     check("title", "Title is required").not().isEmpty(),
     check("ingredients", "Ingredients is required").not().isEmpty(),
@@ -38,6 +43,8 @@ async (req, res) => {
         keyword: req.body.keyword
       });
 
+      saveCover(newPost,req.body.cover)
+
       const post = await newPost.save();
 
       res.json(post);
@@ -48,6 +55,16 @@ async (req, res) => {
   }
 );
 
+
+
+function saveCover(newPost, coverEncoded) {
+  if (coverEncoded == null) return
+  const cover = JSON.parse(coverEncoded)
+  if (cover != null && imageMimeTypes.includes(cover.type)) {
+    newPost.coverImage = new Buffer.from(cover.data, 'base64')
+    newPost.coverImageType = cover.type
+  }
+}
 
 // @route   GET api/posts
 // @desc    Get all post

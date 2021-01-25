@@ -34,12 +34,19 @@ const RecipeSchema = new Schema({
         type: String, 
     },
     
-    
     name : {
         type: String,    
     },
     avatar:{
         type: String
+    },
+    coverImage:{
+        type: Buffer,
+        required: true
+    },
+    coverImageType:{
+        type: String,
+        required: true
     },
     data: {
         type: Date,
@@ -92,5 +99,9 @@ const RecipeSchema = new Schema({
         }
     ]
 });
-
+RecipeSchema.virtual('coverImagePath').get(function() {
+    if (this.coverImage != null && this.coverImageType != null) {
+      return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
+    }
+  })
 module.exports = Post = mongoose.model("post", RecipeSchema);
